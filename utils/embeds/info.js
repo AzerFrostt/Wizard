@@ -15,7 +15,7 @@ const getInfo = () => new MessageEmbed()
     },
     {
         name: 'Source code',
-        value: '[Click to view](TBD)',
+        value: '[Click to view](https://github.com/AzerFrostt/Wizard)',
         inline: true
     })
     .setFooter({text: 'Show support by using code Azer', iconURL: 'https://www.deckshop.pro/img/creatorcode/creator_code.png'})
