@@ -18,7 +18,7 @@ const {
 const { parseTag, isTagValid } = require('../../../utils/tagHandling');
 const { setRoles } = require('../../../utils/setRoles');
 const { IDs } = require('../../../config.json')
-
+const { getNewVerifationID, getCrossVerificationIDs } = require('../../../utils/buttons/getID')
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('verify')
@@ -88,7 +88,7 @@ module.exports = {
       if (await alreadyTaken(tag, interaction.member.id)) {
         const originalAccountId = getDiscordOfTag(tag)
         await interaction.editReply('This account is already taken!');
-        await logChannel.send({embeds: [alertAttemptCrossVerification(memberId, await originalAccountId, tag)]})
+        await logChannel.send({embeds: [alertAttemptCrossVerification(memberId, await originalAccountId, tag)], components: [getCrossVerificationIDs()]})
         return;
       } else {
         await interaction.editReply({
@@ -103,7 +103,7 @@ module.exports = {
         embeds: [setRoles(profileData, interaction.member)],
         ephemeral: true
       });
-      await logChannel.send({embeds: [alertAttemptNewVerification(memberId, tag)]})
+      await logChannel.send({embeds: [alertAttemptNewVerification(memberId, tag)], components: [getNewVerifationID()]})
       return;
     }
   },
