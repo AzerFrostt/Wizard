@@ -11,7 +11,7 @@ const profile = require('./schema');
 const findTag = async (discordID) => 
     profile.findOne({
         discordID
-    }).then((result) => result.tag)
+    }).then((result) => result?.tag)
 
 const saveDefaultProfile = async (tag, discordID) => 
     profile.updateOne({
