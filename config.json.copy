@@ -1,0 +1,60 @@
+{
+    "prefix": "!!",
+    "IDs": {
+        "guild": "582085045561458692",
+        "client": "691118910631575613",
+        "leaderboardChannels": {
+            "legendary": "849825440705151017",
+            "builder": "849825482853974026"
+        },
+        "logChannels": {
+            "alert": "582092054264545280"
+        },
+        "verificationRoles": {
+            "prestige": {
+                "legends": {"name": "Legends", "roleid": "803602993945509908", "icon": "<:legend:590895411284410407>"}, 
+                "starlord": {"name": "Star lord", "roleid": "803603014211731476", "icon": "<:star:927704564914860052>"},
+                "farmersrus": {"name": "FarmersRUs", "roleid": "803603106708717589", "icon": "<:loot:927704097803600002>"},
+                "blackgold": {"name": "Black gold", "roleid": "803603132202483722", "icon": "<:darkelixir:312346454645669889>"},
+                "masterbuilder": {"name": "Master Builder", "roleid": "803603030989078538", "icon": "<:masterbuilder:927704205806927882>"},
+                "philanthropist": {"name": "Philanthropist", "roleid": "803603055123365910", "icon": "<:clangames:927703762561286176>"},
+                "alchemist": {"name": "Alchemist", "roleid": "935653112990011493", "icon": "<:haste:927704540621463643>"},
+                "rocksolid": {"name": "Rock Solid", "roleid": "935653182456086618", "icon": "<:golemking:927704693080199178>"},
+                "greenthumb": {"name": "Green Thumb", "roleid": "935653229159657562", "icon": "<:bush:927704061204119652>"},
+                "leaguelord": {"name": "League Lord", "roleid": "935653303264608277", "icon": "<:medal:927704256453161020>"},
+                "mastergamer": {"name": "Master Gamer", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"}
+            },
+            "colour": {
+                "requirement" : {
+                    "legends": {"arg": "PURPLE",      "name": "Legends purple",        "colourid": "893385962510499900", "roleid": "803602993945509908", "icon": "<:legend:590895411284410407>"}, 
+                    "starlord": {"arg": "YELLOW",      "name": "Star lord yellow",      "colourid": "892956160603353139", "roleid": "803603014211731476", "icon": "<:star:927704564914860052>"},
+                    "farmersrus": {"arg": "FARMERPINK",  "name": "Farmers pink",          "colourid": "935654160148332615", "roleid": "803603106708717589", "icon": "<:loot:927704097803600002>"},
+                    "blackgold": {"arg": "BLACK",       "name": "DE black",            "colourid": "935654258710286356", "roleid": "803603132202483722", "icon": "<:darkelixir:312346454645669889>"},
+                    "masterbuilder": {"arg": "BLUE",        "name": "Builder blue",          "colourid": "935654569898311781", "roleid": "803603030989078538", "icon": "<:masterbuilder:927704205806927882>"},
+                    "philanthropist": {"arg": "PINK",        "name": "Philanthropist pink",   "colourid": "935654653654364161", "roleid": "803603055123365910", "icon": "<:clangames:927703762561286176>"},
+                    "gold": {"arg": "GOLD",        "name": "Gold color",           "colourid": "935654693995180083", "roleid": "935655645024227359", "icon": "<:gold:312346438157991938>"},
+                    "vip": {"arg": "RED",         "name": "V.I.P red",             "colourid": "935654763046010980", "roleid": "935655609364262942", "icon": "<:heart:927704127272804403>"},
+                    "alchemist": {"arg": "ALCHEMISTPINK",       "name": "Alchemist pink",         "colourid": "935654809690845194", "roleid": "935653112990011493", "icon": "<:haste:927704540621463643>"},
+                    "rocksolid": {"arg": "GREY",       "name": "Rock grey",         "colourid": "935654901944557579", "roleid": "935653182456086618", "icon": "<:golemking:927704693080199178>"},
+                    "greenthumb": {"arg": "GREEN",       "name": "Bush green",         "colourid": "935654988095557642", "roleid": "935653229159657562", "icon": "<:bush:927704061204119652>"},
+                    "leaguelord": {"arg": "ORANGE",       "name": "League lord orange",         "colourid": "935655041153527809", "roleid": "935653303264608277", "icon": "<:medal:927704256453161020>"},
+                    "mastergamer": {"arg": "TURQUOISE",       "name": "Gamer turquoise",         "colourid": "935655105569624095", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"}
+                },
+                "norequirement" : {
+                    "default": {"arg": "WHITE",       "name": "Default white",         "colourid": "935655174641451018"}
+                }
+            },
+            "townhall": {
+                "TH8": {"name": "Townhall 8", "roleid": "892969275554414642", "lvl": 8, "icon": "<:th8:936511388849934356>"},
+                "TH9": {"name": "Townhall 9", "roleid": "892969343489564682", "lvl": 9, "icon": "<:th9:288436023573086211>"},
+                "TH10": {"name": "Townhall 10", "roleid": "892969343489564682", "lvl": 10, "icon": "<:th10:288436059203829770>"},
+                "TH11": {"name": "Townhall 11", "roleid": "892969409302384640", "lvl": 11, "icon": "<:th11:288436090665172992>"},
+                "TH12": {"name": "Townhall 12", "roleid": "892969438406668338", "lvl": 12, "icon": "<:th12:451408476426469387>"},
+                "TH13": {"name": "Townhall 13", "roleid": "892969469922668614", "lvl": 13, "icon": "<:th13:651100997367627823>"},
+                "TH14": {"name": "Townhall 14", "roleid": "892969502881484850", "lvl": 14, "icon": "<:th14:829099837034070027>"}
+            }
+        },
+        "mediumPermRoles" : ["761865691904606228", "621998190601961473"],
+        "fullPermRoles" : ["236524828297920522", "243443004969320448", "582089805634994186"]
+    }
+}

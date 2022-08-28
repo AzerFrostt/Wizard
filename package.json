@@ -1,0 +1,33 @@
+{
+  "name": "wizardbot",
+  "version": "1.0.0",
+  "description": "Bot for stat tracking clash of clans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesAUre/WizardBot.git"
+  },
+  "author": "Azer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesAUre/WizardBot/issues"
+  },
+  "homepage": "https://github.com/JamesAUre/WizardBot#readme",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "axios": "^0.27.2",
+    "bluebird": "^3.7.2",
+    "bottleneck": "^2.19.5",
+    "cron": "^2.1.0",
+    "discord.js": "^13.9.1",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "nodemon": "^2.0.19"
+  }
+}
