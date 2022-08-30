@@ -17,10 +17,9 @@ module.exports = {
     ),
   async execute(interaction) {
     await interaction.deferReply({ ephemeral: true });
-    const tag = interaction.options.getString('tag');
-    const id = parseTag(tag);
+    const tag = parseTag(interaction.options.getString('tag'));
     const discordID = interaction.member.id;
-    if (!isTagValid(id)) {
+    if (!isTagValid(tag)) {
       await interaction.editReply({
         embeds: [getInvalidTagEmbed()],
         ephemeral: true,
