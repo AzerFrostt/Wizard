@@ -42,12 +42,12 @@ const { getProfileEmbed } = require('../../../utils/embeds/stats')
     await interaction.deferReply({ ephemeral: false });
     if (interaction.options.getSubcommand() === 'show'){
         const unsanitizedTag = interaction.options.getString('tag') ?? await findTag(interaction.member.id)
-
+        
         if (!unsanitizedTag) {
             await interaction.editReply(`You have not set a default profile. To do so type \`/profile save <player tag>\``)
             return
         }
-
+        
         const tag = parseTag(unsanitizedTag);
         if (!isTagValid(tag)) {
             sendInvalidTagReply(interaction)

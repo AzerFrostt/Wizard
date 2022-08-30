@@ -20,7 +20,7 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction) {
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ ephemeral: false });
     
     const tag = parseTag(interaction.options.getString('tag'))
     const id = interaction.member.id

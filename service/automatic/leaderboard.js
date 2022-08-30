@@ -17,7 +17,8 @@ const limiter = new Bottleneck({
 const createLeaderboard = async() => {
     const participants = await getLeaderboardAccounts()
     const discordData = await appendDiscordData(participants)
-    const playerData = await fetchAllAccounts(discordData).then((x) => pruneIncompleteData(x))
+    const filteredDiscordData = filterInvalidAccounts(discordData)
+    const playerData = await fetchAllAccounts(filteredDiscordData).then((x) => pruneIncompleteData(x))
     
     const participantsSplit = splitParticipants(playerData)
 
@@ -42,25 +43,29 @@ const appendDiscordData = async(participants) => {
     return participants.map((participant) => ({ ...participant._doc, discordUsername: findDiscordUsername(participant, memberData) }))
 }
 
-const findDiscordUsername = (participant, memberData) => memberData.find(x => x.user.id === participant.discordID)
+const findDiscordUsername = (participant, memberData) => {
+    const discordUser = memberData.find(x => x.user.id === participant.discordID)?.user
+    return discordUser ? `${discordUser.username}#${discordUser.discriminator}` : null
+}
+
+const filterInvalidAccounts = (participants) => 
+    participants.filter((participant) => participant.discordUsername)
 
 const fetchAllAccounts = (participants) => 
     promiseAllProps(participantDatas = participants.map((participant) => 
         limiter.schedule(() => ({
-            discord: participant.discordUsername ? participant.discordUsername : '[Could not find name]',
+            discordUsername: participant.discordUsername,
             clash: findProfile(participant.playerTag),
-            db: {
-                discordID: participant.discordID,
-                leaderboard: participant.leaderboard,
-                builderleaderboard: participant.builderleaderboard
-            }
+            discordID: participant.discordID,
+            leaderboard: participant.leaderboard,
+            builderleaderboard: participant.builderleaderboard
         }))
     ))
 
 const splitParticipants = (participants) => 
     participants.reduce((acc, x) => {
-        if (x.db.leaderboard) acc.legendParticipants.push(x)
-        if (x.db.builderleaderboard) acc.builderParticipants.push(x)
+        if (x.leaderboard) acc.legendParticipants.push(x)
+        if (x.builderleaderboard) acc.builderParticipants.push(x)
         return acc
     } , { legendParticipants: [], builderParticipants: [] })
 
