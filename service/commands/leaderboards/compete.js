@@ -76,7 +76,7 @@ module.exports = {
     const legends = account.trophies >= LEGENDARY_MINIMUM
     const builder = account.versusTrophies >= BUILDER_MINIMUM
 
-    updateLeaderboardParticipation(tag, id, legends, builder)
+    if (legends || builder) updateLeaderboardParticipation(tag, id, legends, builder)
 
     const msg = x => `You are now competing under the ${x}, good luck!`
 
