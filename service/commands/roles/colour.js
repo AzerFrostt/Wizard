@@ -57,7 +57,7 @@ module.exports = {
   async execute(interaction) {
     await interaction.deferReply({ ephemeral: true });
     if (interaction.options.getSubcommand() === 'remove') {
-      await removeColourRoles(user);
+      await removeColourRoles(interaction.member);
       await interaction.editReply(`Removed colour override!`);
       return;
     } else if (interaction.options.getSubcommand() === 'add') {

@@ -20,6 +20,7 @@ const setRoles = (playerData, user) => {
   };
 
   addAchievementRoles(user, achieved);
+
   const thLevel = addTownhall(playerData, user);
 
   const noRoles =
@@ -38,7 +39,7 @@ const createValidVerificationEmbedDescription = (
   if (noRoles) return `• Not eligible for any roles\n`;
 
   let thEmbedDesc = '';
-  for (thRole in roles.townhall) {
+  for (let thRole in roles.townhall) {
     if (roles.townhall[thRole].lvl === thLevel) {
       thEmbedDesc = `${roles.townhall[thRole].icon} <@&${roles.townhall[thRole].roleid}> added!\n`;
       break;
@@ -107,7 +108,7 @@ const addTownhall = (player, user) => {
   if (newThLevel > oldThLevel) {
     removeTH(user, player.townHallLevel);
 
-    for (thRole in roles.townhall) {
+    for (let thRole in roles.townhall) {
       if (roles.townhall[thRole].lvl === newThLevel) {
         user.roles.add(roles.townhall[thRole].roleid);
         return newThLevel;
@@ -120,15 +121,15 @@ const addTownhall = (player, user) => {
 
 const getOldThLevel = (user) => {
   const user_roles = user.roles.cache;
-  for (i in roles.townhall) {
-    if (user_roles.has(roles.townhall[i])) return roles.townhall[i].lvl;
+  for (let i in roles.townhall) {
+    if (user_roles.has(roles.townhall[i].roleid)) return roles.townhall[i].lvl;
   }
   return 0;
 };
 
 const removeTH = (user, lvl) => {
   const user_roles = user.roles.cache;
-  for (i in roles.townhall) {
+  for (let i in roles.townhall) {
     if (
       user_roles.has(roles.townhall[i].roleid) &&
       roles.townhall[i].lvl < lvl

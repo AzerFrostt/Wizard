@@ -7,10 +7,9 @@ module.exports = {
     .setDescription('Admin only - Uncompete all participants on every leaderboard.'),
   async execute(interaction) {
     await interaction.deferReply({ ephemeral: false });
-    
-    resetLeaderboards()
 
     if(hasFullPerms(interaction.member)){
+      resetLeaderboards()
       await interaction.editReply(`Leaderboards have been reset.`)        
     } else await interaction.editReply(`Insufficient permissions to use this command.`)
   }
