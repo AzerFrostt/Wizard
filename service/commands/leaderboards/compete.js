@@ -5,6 +5,7 @@ const {
   checkIfCompetingInBoth,
   updateLeaderboardParticipation
 } = require('../../../dao/mongo/participant/connections');
+const { isLeaderboardRestricted } = require('../../../dao/mongo/restriction/connections')
 const { isLeaderboardLocked } = require('../../../dao/mongo/toggle/connections')
 const { getInvalidTagEmbed } = require('../../../utils/embeds/verify');
 const { parseTag, isTagValid } = require('../../../utils/tagHandling');
@@ -51,6 +52,11 @@ module.exports = {
 
     if (await competingInBoth) {
       await interaction.editReply('You are competing in both leaderboards already!')
+      return
+    }
+
+    if (await isLeaderboardRestricted(tag)) {
+      await interaction.editReply('Your account has been restricted from participating on the leaderboards.')
       return
     }
 
