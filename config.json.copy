@@ -8,7 +8,8 @@
             "builder": "849825482853974026"
         },
         "logChannels": {
-            "alert": "582092054264545280"
+            "newVerify": "582092054264545280",
+            "crossVerify": "582092054264545280"
         },
         "verificationRoles": {
             "prestige": {

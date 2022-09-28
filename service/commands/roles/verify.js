@@ -39,7 +39,8 @@ module.exports = {
     await interaction.deferReply({ ephemeral: true });
     const tag = parseTag(interaction.options.getString('tag'))
     const token = interaction.options.getString('token');
-    const logChannel = interaction.guild.channels.cache.get(IDs.logChannels.alert)
+    const crossVerifyLogChannel = interaction.guild.channels.cache.get(IDs.logChannels.crossVerify)
+    const newVerifyLogChannel = interaction.guild.channels.cache.get(IDs.logChannels.newVerify)
     const memberId = interaction.member.id
 
     if (!isTagValid(tag)) {
@@ -88,7 +89,7 @@ module.exports = {
       if (await alreadyTaken(tag, interaction.member.id)) {
         const originalAccountId = getDiscordOfTag(tag)
         await interaction.editReply('This account is already taken!');
-        await logChannel.send({embeds: [alertAttemptCrossVerification(memberId, await originalAccountId, tag)], components: [getCrossVerificationIDs()]})
+        await crossVerifyLogChannel.send({embeds: [alertAttemptCrossVerification(memberId, await originalAccountId, tag)], components: [getCrossVerificationIDs()]})
         return;
       } else {
         await interaction.editReply({
@@ -103,7 +104,7 @@ module.exports = {
         embeds: [setRoles(profileData, interaction.member)],
         ephemeral: true
       });
-      await logChannel.send({embeds: [alertAttemptNewVerification(memberId, tag)], components: [getNewVerifationID()]})
+      await newVerifyLogChannel.send({embeds: [alertAttemptNewVerification(memberId, tag)], components: [getNewVerifationID()]})
       return;
     }
   },
