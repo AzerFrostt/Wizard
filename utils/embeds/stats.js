@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 const MAX_MEMBERS = 3
-
+const { IDs } = require('../../config.json') 
 const getProfileEmbed = (profile, verified) => {
     const embed = new MessageEmbed()
     .setTitle(`${getLeagueEmote(profile.trophies)} ${profile.name} ${profile.tag}`)
@@ -182,13 +182,14 @@ const getLeagueEmote = (trophycount) => {
 }
 
 const getTownhallEmote = (thlvl) => {
-    if (thlvl == 14) return "<:th14:829099837034070027>"
-    if (thlvl == 13) return "<:th13:651100997367627823>"
-    if (thlvl == 12) return "<:th12:451408476426469387>"
-    if (thlvl == 11) return "<:th11:288436090665172992>"
-    if (thlvl == 10) return "<:th10:288436059203829770>"
-    if (thlvl == 9) return "<:th9:288436023573086211>"
-    else return "<:th8:936511388849934356>"
+    const townhallDatas = IDs.verificationRoles.townhall
+
+    for (let index in townhallDatas) {
+        if (thlvl === townhallDatas[index].lvl) {
+            return townhallDatas[index].icon
+        }
+    }
+    return townhallDatas['TH8'].icon
 }
 
 function getWarLeagueEmote(warLeagueId){
