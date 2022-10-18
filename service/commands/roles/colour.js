@@ -32,7 +32,7 @@ module.exports = {
               { name: 'Pink', value: 'PINK' },
               { name: 'Gold', value: 'GOLD' },
               { name: 'Red', value: 'RED' },
-              { name: 'Alchemist Pink', value: 'ALCEHMISTPINK' },
+              { name: 'Alchemist Pink', value: 'ALCHEMISTPINK' },
               { name: 'Grey', value: 'GREY' },
               { name: 'Green', value: 'GREEN' },
               { name: 'Orange', value: 'ORANGE' },
