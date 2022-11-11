@@ -17,6 +17,7 @@ const setRoles = (playerData, user) => {
     greenThumb: playerAchievement[3].value >= 7500,
     leagueLord: playerAchievement[33].value >= 500,
     masterGamer: playerAchievement[31].value >= 150000,
+    conqueror: playerData?.legendStatistics?.bestSeason?.rank <= 1000
   };
 
   addAchievementRoles(user, achieved);
@@ -80,6 +81,9 @@ const createValidVerificationEmbedDescription = (
     (achieved.masterGamer
       ? `${roles.prestige.mastergamer.icon} <@&${roles.prestige.mastergamer.roleid}> added!\n`
       : ``) +
+    (achieved.conqueror
+      ? `${roles.prestige.conqueror.icon} <@&${roles.prestige.conqueror.roleid}> added!\n`
+      : ``) +  
     (thLevel > 0 ? thEmbedDesc : ``)
   );
 };
@@ -98,6 +102,7 @@ const addAchievementRoles = (user, achieved) => {
   if (achieved.greenThumb) user.roles.add(roles.prestige.greenthumb.roleid);
   if (achieved.leagueLord) user.roles.add(roles.prestige.leaguelord.roleid);
   if (achieved.masterGamer) user.roles.add(roles.prestige.mastergamer.roleid);
+  if (achieved.conqueror) user.roles.add(roles.prestige.conqueror.roleid);
 };
 
 const addTownhall = (player, user) => {

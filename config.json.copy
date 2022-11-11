@@ -23,7 +23,8 @@
                 "rocksolid": {"name": "Rock Solid", "roleid": "935653182456086618", "icon": "<:golemking:927704693080199178>"},
                 "greenthumb": {"name": "Green Thumb", "roleid": "935653229159657562", "icon": "<:bush:927704061204119652>"},
                 "leaguelord": {"name": "League Lord", "roleid": "935653303264608277", "icon": "<:medal:927704256453161020>"},
-                "mastergamer": {"name": "Master Gamer", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"}
+                "mastergamer": {"name": "Master Gamer", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"},
+                "conqueror": {"name": "Conqueror", "roleid": "1040742997228257401", "icon": "<:legend_trophy:935757690020429844>"}
             },
             "colour": {
                 "requirement" : {
@@ -34,12 +35,13 @@
                     "masterbuilder": {"arg": "BLUE",        "name": "Builder blue",          "colourid": "935654569898311781", "roleid": "803603030989078538", "icon": "<:masterbuilder:927704205806927882>"},
                     "philanthropist": {"arg": "PINK",        "name": "Philanthropist pink",   "colourid": "935654653654364161", "roleid": "803603055123365910", "icon": "<:clangames:927703762561286176>"},
                     "gold": {"arg": "GOLD",        "name": "Gold color",           "colourid": "935654693995180083", "roleid": "935655645024227359", "icon": "<:gold:312346438157991938>"},
-                    "vip": {"arg": "RED",         "name": "V.I.P red",             "colourid": "935654763046010980", "roleid": "935655609364262942", "icon": "<:heart:927704127272804403>"},
+                    "vip": {"arg": "VIPRED",         "name": "V.I.P red",             "colourid": "935654763046010980", "roleid": "935655609364262942", "icon": "<:heart:927704127272804403>"},
                     "alchemist": {"arg": "ALCHEMISTPINK",       "name": "Alchemist pink",         "colourid": "935654809690845194", "roleid": "935653112990011493", "icon": "<:haste:927704540621463643>"},
                     "rocksolid": {"arg": "GREY",       "name": "Rock grey",         "colourid": "935654901944557579", "roleid": "935653182456086618", "icon": "<:golemking:927704693080199178>"},
                     "greenthumb": {"arg": "GREEN",       "name": "Bush green",         "colourid": "935654988095557642", "roleid": "935653229159657562", "icon": "<:bush:927704061204119652>"},
                     "leaguelord": {"arg": "ORANGE",       "name": "League lord orange",         "colourid": "935655041153527809", "roleid": "935653303264608277", "icon": "<:medal:927704256453161020>"},
-                    "mastergamer": {"arg": "TURQUOISE",       "name": "Gamer turquoise",         "colourid": "935655105569624095", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"}
+                    "mastergamer": {"arg": "TURQUOISE",       "name": "Gamer turquoise",         "colourid": "935655105569624095", "roleid": "935653392028692530", "icon": "<:clangames:927703762561286176>"},
+                    "conqueror": {"arg": "RED",       "name": "Conqueror red",         "colourid": "1040743016970862772", "roleid": "1040742997228257401", "icon": "<:legend_trophy:935757690020429844>"}
                 },
                 "norequirement" : {
                     "default": {"arg": "WHITE",       "name": "Default white",         "colourid": "935655174641451018"}

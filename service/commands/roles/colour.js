@@ -31,12 +31,13 @@ module.exports = {
               { name: 'Blue', value: 'BLUE' },
               { name: 'Pink', value: 'PINK' },
               { name: 'Gold', value: 'GOLD' },
-              { name: 'Red', value: 'RED' },
+              { name: 'Vip Red', value: 'VIPRED' },
               { name: 'Alchemist Pink', value: 'ALCHEMISTPINK' },
               { name: 'Grey', value: 'GREY' },
               { name: 'Green', value: 'GREEN' },
               { name: 'Orange', value: 'ORANGE' },
               { name: 'Turquoise', value: 'TURQUOISE' },
+              { name: 'Red', value: 'RED' },
               { name: 'White', value: 'WHITE' }
             )
         )
