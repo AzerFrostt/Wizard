@@ -71,7 +71,7 @@ const splitParticipants = (participants) =>
 
 const pruneIncompleteData = (playerData) =>
     playerData.reduce((acc, x) => {
-        if (x.clash.response) acc.push(x)
+        if (x.clash.response?.found) acc.push(x)
         return acc
     }, [])
 
