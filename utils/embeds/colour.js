@@ -1,14 +1,14 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const { IDs } = require('../../config.json');
 const colours = IDs.verificationRoles.colour;
 const getSuccessfulColourEmbed = (roleID) =>
-  new MessageEmbed()
+  new EmbedBuilder()
     .setTitle('🔥 Color override added! 🔥')
     .setColor('#00de30')
     .setDescription(`I have added <@&${roleID}> as your override`);
 
 const getUnsatisfiedRequirementEmbed = (roleID) =>
-  new MessageEmbed()
+  new EmbedBuilder()
     .setTitle("💨 Couldn't add color override! 💨")
     .setColor('#d10202')
     .setDescription(`For this override you need <@&${roleID}>`);
@@ -22,7 +22,7 @@ const getColoursListEmbed = () => {
     colourList += `<:bullet:840654524213231716> <@&${colours.norequirement[k].colourid}> requires no additional roles\n\n`;
   }
   colourList += `\nUse /colour remove to remove your colour roles.`;
-  return new MessageEmbed()
+  return new EmbedBuilder()
     .setTitle('Colours List')
     .setColor('#4CF7D6')
     .setDescription(
@@ -42,7 +42,7 @@ const getAvailableColoursListEmbed = (user) => {
     colourList += `<:unranked:935678512822616074> <@&${colours.norequirement[k].colourid}>\n`;
   }
   colourList += `\nLooks wrong? Make sure you have the required roles first. Use \`/verify\` to get any applicable roles\nUse \`/colour remove\` to remove your colour roles.`;
-  return new MessageEmbed()
+  return new EmbedBuilder()
     .setTitle('Colours List')
     .setColor('#4CF7D6')
     .setDescription(

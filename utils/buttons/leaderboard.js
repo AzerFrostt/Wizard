@@ -1,11 +1,11 @@
-const { MessageButton, MessageActionRow } = require('discord.js')
+const { ActionRowBuilder, ButtonBuilder } = require('discord.js')
 
 const getHowToCompete = () => 
-    new MessageActionRow().addComponents(
-        new MessageButton()
+    new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
             .setCustomId('howToCompete')
             .setLabel('How To Compete')
-            .setStyle('PRIMARY')
+            .setStyle('Primary')
     )
 
 module.exports = {

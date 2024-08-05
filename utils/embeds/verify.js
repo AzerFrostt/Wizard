@@ -1,6 +1,6 @@
-const { MessageEmbed } = require('discord.js')
+const { EmbedBuilder } = require('discord.js')
 
-const getInvalidTagEmbed = () => new MessageEmbed()
+const getInvalidTagEmbed = () => new EmbedBuilder()
     .setTitle('Invalid Tag! ❌')
     .setColor('#D10202')
     .addFields({
@@ -11,7 +11,7 @@ const getInvalidTagEmbed = () => new MessageEmbed()
       'https://media.discordapp.net/attachments/582092054264545280/1013012740861853696/findprofile.jpg?width=959&height=443'
     )
 
-const getInvalidApiTokenEmbed = () => new MessageEmbed()
+const getInvalidApiTokenEmbed = () => new EmbedBuilder()
     .setTitle('Invalid API token! ❌')
     .setColor('#D10202')
     .addFields({
@@ -22,7 +22,7 @@ const getInvalidApiTokenEmbed = () => new MessageEmbed()
       'https://media.discordapp.net/attachments/582092054264545280/813606623519703070/image0.png?width=1440&height=665'
     )
 
-const getValidVerificationEmbed = desc => new MessageEmbed()
+const getValidVerificationEmbed = desc => new EmbedBuilder()
     .setTitle('Verification successful! ✅')
     .setColor('#00DE30')
     .addFields({
@@ -30,7 +30,7 @@ const getValidVerificationEmbed = desc => new MessageEmbed()
         value: desc
     })
     
-const getUnverifiedEmbed = rolesRemoved => new MessageEmbed()
+const getUnverifiedEmbed = rolesRemoved => new EmbedBuilder()
     .setTitle('Unverification successful! ✅')
     .setColor('#00DE30')
     .addFields({
@@ -38,15 +38,15 @@ const getUnverifiedEmbed = rolesRemoved => new MessageEmbed()
         value: rolesRemoved.reduce((acc, x) => acc += `${x.icon ?? '•'} <@&${x.id}> removed!\n` , '') ?? '• No roles to remove'
     });
 
-const alertAttemptCrossVerification = (newUserId, originalOwnerId, tag) => new MessageEmbed()
+const alertAttemptCrossVerification = (newUserId, originalOwnerId, tag) => new EmbedBuilder()
     .setTitle('Attempted cross verification⚠️')
     .setColor('FFFF00')
     .setDescription(`User <@${newUserId}> tried to verify an account linked to <@${originalOwnerId}> using the tag \`#${tag}\``)
 
-const alertAttemptNewVerification = (newUserId, tag) => new MessageEmbed()
+const alertAttemptNewVerification = (newUserId, tag) => new EmbedBuilder()
     .setTitle('New verification⚠️')
     .setColor('00DE30')
-    .setDescription(`User <@${newUserId}> verified a new account under the tag \`#${tag}\``)
+    .setDescription(`User <@${newUserId}> (${newUserId}) verified a new account under the tag \`#${tag}\``)
 
 module.exports = {
     getInvalidTagEmbed,

@@ -24,21 +24,19 @@ module.exports = {
             .setDescription('The colour override you want.')
             .setRequired(true)
             .addChoices(
-              { name: 'Purple', value: 'PURPLE' },
-              { name: 'Yellow', value: 'YELLOW' },
-              { name: 'FarmersRUs Pink', value: 'FARMERPINK' },
-              { name: 'Black', value: 'BLACK' },
-              { name: 'Blue', value: 'BLUE' },
-              { name: 'Pink', value: 'PINK' },
+              { name: 'Legends Purple', value: 'PURPLE' },
+              { name: 'Star Lord Yellow', value: 'YELLOW' },
+              { name: 'Farmers Pink', value: 'FARMERPINK' },
+              { name: 'Builder Blue', value: 'BLUE' },
+              { name: 'Philanthropist Pink', value: 'PINK' },
               { name: 'Gold', value: 'GOLD' },
               { name: 'Vip Red', value: 'VIPRED' },
-              { name: 'Alchemist Pink', value: 'ALCHEMISTPINK' },
-              { name: 'Grey', value: 'GREY' },
-              { name: 'Green', value: 'GREEN' },
-              { name: 'Orange', value: 'ORANGE' },
-              { name: 'Turquoise', value: 'TURQUOISE' },
-              { name: 'Red', value: 'RED' },
-              { name: 'White', value: 'WHITE' }
+              { name: 'Bush Green', value: 'GREEN' },
+              { name: 'Gamer Mint', value: 'MINT' },
+              { name: 'Conqueror Red', value: 'RED' },
+              { name: 'Vanquisher Turqoise', value: 'TURQUOISE' },
+              { name: 'Capitalist Black', value: 'BLACK' },
+              { name: 'Default White', value: 'WHITE' }
             )
         )
     )

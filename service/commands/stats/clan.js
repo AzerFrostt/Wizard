@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { getClanEmbed } = require('../../../utils/embeds/stats');
 const { getInvalidTagEmbed } = require('../../../utils/embeds/clanTag')
-const { parseTag, isTagValid } = require('../../../utils/tagHandling');
+const { parseTag, isTagValid } = require('../../../utils/arguments/tagHandling');
 const { findClan } = require('../../../dao/clash/clans')
 
   module.exports = {

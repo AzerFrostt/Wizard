@@ -1,6 +1,6 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
-const getGeneralHelp = () => new MessageEmbed()
+const getGeneralHelp = () => new EmbedBuilder()
     .setTitle("Guide to use wizard")
     .setColor('#34C6EB')
     .setDescription(
@@ -13,7 +13,7 @@ const getGeneralHelp = () => new MessageEmbed()
         `<:bullet:840654524213231716> \`leaderboards\` - Competing with other players on the server leaderboard\n`,
     })
   
-const getVerificationHelp = () => new MessageEmbed()
+const getVerificationHelp = () => new EmbedBuilder()
     .setTitle("Help for verification")
     .setColor('#34C6EB')
     .setDescription(
@@ -31,7 +31,7 @@ const getVerificationHelp = () => new MessageEmbed()
         value: `A quick short cut to verify again on the same account, useful for updating achievement roles.`,
     });
 
-const getColoursHelp = () => new MessageEmbed()
+const getColoursHelp = () => new EmbedBuilder()
     .setTitle("Help for colours")
     .setColor('#34C6EB')
     .setDescription(
@@ -49,7 +49,7 @@ const getColoursHelp = () => new MessageEmbed()
         value: `If you have a colour role, remove it.`,
     })
 
-const getStatsHelp = () => new MessageEmbed()
+const getStatsHelp = () => new EmbedBuilder()
     .setTitle("Help for stats")
     .setColor('#34C6EB')
     .setDescription(
@@ -75,7 +75,7 @@ const getStatsHelp = () => new MessageEmbed()
         value: `Displays the stats of a clan with the specified tag.`,
     })
 
-const getLeaderboardHelp = () => new MessageEmbed()
+const getLeaderboardHelp = () => new EmbedBuilder()
     .setTitle("Help for leaderboard participation")
     .setColor('#34C6EB')
     .setDescription(

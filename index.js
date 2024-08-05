@@ -1,4 +1,4 @@
-const { Collection } = require('discord.js');
+const { Collection, ActivityType } = require('discord.js');
 const fs = require('fs');
 const client = require('./utils/client')
 const { scheduleLeaderboards } = require('./utils/scheduler')
@@ -48,7 +48,7 @@ client.on('interactionCreate', async (interaction) => {
 
 client.once('ready', () => {
   console.log('Ready!');
-  client.user.setPresence({ activities: [{ name: 'with fireballs 🔥', type: 'PLAYING'}], status: 'online'})
+  client.user.setPresence({ activities: [{ name: 'with fireballs 🔥', type: ActivityType.Playing }], status: 'online'})
   scheduleLeaderboards()
 });
 

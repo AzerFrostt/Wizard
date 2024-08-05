@@ -15,7 +15,7 @@ const {
   alertAttemptCrossVerification,
   alertAttemptNewVerification
 } = require('../../../utils/embeds/verify');
-const { parseTag, isTagValid } = require('../../../utils/tagHandling');
+const { parseTag, isTagValid } = require('../../../utils/arguments/tagHandling');
 const { setRoles } = require('../../../utils/setRoles');
 const { IDs } = require('../../../config.json')
 const { getNewVerifationID, getCrossVerificationIDs } = require('../../../utils/buttons/getID')

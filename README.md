@@ -1,6 +1,6 @@
 # WizardBot
 
-Utility bot created for Clash of Clans to support stat tracking within the discord server.
+Utility bot created for Clash of Clans to support stat tracking with in the discord server.
 
 ## Deployment
 
@@ -11,8 +11,6 @@ Invite your bot to your server, make sure you select the `bot` and `applications
 Get your Clash of Clans API Token from [here](https://developer.clashofclans.com/).
 
 ### Setting up
-
-Setting up the bot will require basic knowledge in Javascript, MongoDB and Discord bot development.
 
 1. Clone this repository
 
@@ -45,7 +43,11 @@ node index
 
 and hopefully everything works right :)
 
+## License
+
+[ISC](https://choosealicense.com/licenses/isc/)
+
 ## Authors
 
-- [@Azer](https://www.github.com/AzerFrostt)
+- [@Azer](https://www.github.com/JamesAUre)
 - [@Hawk Eye](https://github.com/hawkeye7662)

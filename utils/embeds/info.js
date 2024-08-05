@@ -1,7 +1,7 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const client = require('../../utils/client')
 
-const getInfo = () => new MessageEmbed()
+const getInfo = () => new EmbedBuilder()
     .setTitle("Wizard")
     .setColor('#34C6EB')
     .setDescription(

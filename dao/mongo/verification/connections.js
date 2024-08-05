@@ -37,7 +37,7 @@ const isOwnerOfAccount = async (tag, discordID) =>
 const getDiscordOfTag = async (tag) => 
     verifation.findOne({
         playerTag: tag
-    }).then((result) => result.discordID)
+    }).then((result) => result?.discordID)
 
 const insertVerification = async (tag, discordID) =>
     verifation.create({
@@ -61,6 +61,9 @@ const unverifyUser = async (discordID) =>
     }).then(result => result)
     .catch((e) => console.log(e))
 
+const getVerifications = async (discordID) =>
+    verifation.find({discordID})
+
 module.exports = {
     tagVerified,
     alreadyTaken,
@@ -68,5 +71,6 @@ module.exports = {
     getDiscordOfTag,
     insertVerification,
     tagVerifiedBySameUser,
-    unverifyUser
+    unverifyUser,
+    getVerifications
 }

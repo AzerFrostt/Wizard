@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { hasMediumPerms } = require('../../../utils/permissions');
 const { getInvalidTagEmbed } = require('../../../utils/embeds/verify');
-const { parseTag, isTagValid } = require('../../../utils/tagHandling');
+const { parseTag, isTagValid } = require('../../../utils/arguments/tagHandling');
 const { saveLeaderboardRestriction } = require('../../../dao/mongo/restriction/connections')
 
 module.exports = {

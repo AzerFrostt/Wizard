@@ -5,19 +5,21 @@ const setRoles = (playerData, user) => {
   const playerAchievement = playerData.achievements;
   const achieved = {
     legends: playerData.bestTrophies >= 5000,
-    starLord: playerData.warStars >= 1300,
+    starLord: 
+      playerData.warStars >= 1300 &&
+      playerAchievement[33].value >= 500,
     farmersRUs:
       playerAchievement[5].value >= 2000000000 &&
-      playerAchievement[6].value >= 2000000000,
-    blackGold: playerAchievement[16].value >= 20000000,
-    masterBuilder: playerData.bestVersusTrophies >= 5000,
+      playerAchievement[6].value >= 2000000000 &&
+      playerAchievement[16].value >= 20000000,
+    masterBuilder: playerData.bestBuilderBaseTrophies >= 5000,
     philanthropist: playerAchievement[14].value >= 750000,
-    alchemist: playerAchievement[23].value >= 20000,
-    rockSolid: playerAchievement[13].value >= 10000,
     greenThumb: playerAchievement[3].value >= 7500,
-    leagueLord: playerAchievement[33].value >= 500,
     masterGamer: playerAchievement[31].value >= 150000,
-    conqueror: playerData?.legendStatistics?.bestSeason?.rank <= 1000
+    conqueror: playerData?.legendStatistics?.bestSeason?.rank <= 1000,
+    vanquisher: playerData?.legendStatistics?.bestBuilderBaseSeason?.rank <= 1000,
+    capitalist: playerData?.clanCapitalContributions >= 3000000,
+    member: playerData?.townHallLevel >= 5
   };
 
   addAchievementRoles(user, achieved);
@@ -57,26 +59,14 @@ const createValidVerificationEmbedDescription = (
     (achieved.farmersRUs
       ? `${roles.prestige.farmersrus.icon} <@&${roles.prestige.farmersrus.roleid}> added!\n`
       : ``) +
-    (achieved.blackGold
-      ? `${roles.prestige.blackgold.icon} <@&${roles.prestige.blackgold.roleid}> added!\n`
-      : ``) +
     (achieved.masterBuilder
       ? `${roles.prestige.masterbuilder.icon} <@&${roles.prestige.masterbuilder.roleid}> added!\n`
       : ``) +
     (achieved.philanthropist
       ? `${roles.prestige.philanthropist.icon} <@&${roles.prestige.philanthropist.roleid}> added!\n`
       : ``) +
-    (achieved.alchemist
-      ? `${roles.prestige.alchemist.icon} <@&${roles.prestige.alchemist.roleid}> added!\n`
-      : ``) +
-    (achieved.rockSolid
-      ? `${roles.prestige.rocksolid.icon} <@&${roles.prestige.rocksolid.roleid}> added!\n`
-      : ``) +
     (achieved.greenThumb
       ? `${roles.prestige.greenthumb.icon} <@&${roles.prestige.greenthumb.roleid}> added!\n`
-      : ``) +
-    (achieved.leagueLord
-      ? `${roles.prestige.leaguelord.icon} <@&${roles.prestige.leaguelord.roleid}> added!\n`
       : ``) +
     (achieved.masterGamer
       ? `${roles.prestige.mastergamer.icon} <@&${roles.prestige.mastergamer.roleid}> added!\n`
@@ -84,7 +74,16 @@ const createValidVerificationEmbedDescription = (
     (achieved.conqueror
       ? `${roles.prestige.conqueror.icon} <@&${roles.prestige.conqueror.roleid}> added!\n`
       : ``) +  
-    (thLevel > 0 ? thEmbedDesc : ``)
+    (achieved.vanquisher
+      ? `${roles.prestige.vanquisher.icon} <@&${roles.prestige.vanquisher.roleid}> added!\n`
+      : ``) + 
+    (achieved.capitalist
+      ? `${roles.prestige.capitalist.icon} <@&${roles.prestige.capitalist.roleid}> added!\n`
+      : ``) + 
+    (thLevel > 0 ? thEmbedDesc : ``) +
+    (achieved.member
+      ? `${roles.prestige.member.icon} <@&${roles.prestige.member.roleid}> added!\n`
+      : ``) 
   );
 };
 
@@ -92,17 +91,16 @@ const addAchievementRoles = (user, achieved) => {
   if (achieved.legends) user.roles.add(roles.prestige.legends.roleid);
   if (achieved.starLord) user.roles.add(roles.prestige.starlord.roleid);
   if (achieved.farmersRUs) user.roles.add(roles.prestige.farmersrus.roleid);
-  if (achieved.blackGold) user.roles.add(roles.prestige.blackgold.roleid);
   if (achieved.masterBuilder)
     user.roles.add(roles.prestige.masterbuilder.roleid);
   if (achieved.philanthropist)
     user.roles.add(roles.prestige.philanthropist.roleid);
-  if (achieved.alchemist) user.roles.add(roles.prestige.alchemist.roleid);
-  if (achieved.rockSolid) user.roles.add(roles.prestige.rocksolid.roleid);
   if (achieved.greenThumb) user.roles.add(roles.prestige.greenthumb.roleid);
-  if (achieved.leagueLord) user.roles.add(roles.prestige.leaguelord.roleid);
   if (achieved.masterGamer) user.roles.add(roles.prestige.mastergamer.roleid);
   if (achieved.conqueror) user.roles.add(roles.prestige.conqueror.roleid);
+  if (achieved.vanquisher) user.roles.add(roles.prestige.vanquisher.roleid);
+  if (achieved.capitalist) user.roles.add(roles.prestige.capitalist.roleid);
+  if (achieved.member) user.roles.add(roles.prestige.member.roleid);
 };
 
 const addTownhall = (player, user) => {

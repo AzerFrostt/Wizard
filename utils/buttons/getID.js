@@ -1,22 +1,22 @@
-const { MessageButton, MessageActionRow } = require('discord.js')
+const { ActionRowBuilder, ButtonBuilder } = require('discord.js')
 
-const verifyingIDButton = new MessageButton()
+const verifyingIDButton = new ButtonBuilder()
     .setCustomId('getVerifyingID')
     .setLabel('Get user ID')
-    .setStyle('PRIMARY')
+    .setStyle('Primary')
 
-const verifiedIDButton = new MessageButton()
+const verifiedIDButton = new ButtonBuilder()
     .setCustomId('getVerifiedID')
     .setLabel('Get ID of linked account')
-    .setStyle('PRIMARY')
+    .setStyle('Primary')
 
 const getNewVerifationID = () => 
-    new MessageActionRow().addComponents(
+    new ActionRowBuilder().addComponents(
         verifyingIDButton
     )
 
 const getCrossVerificationIDs = () => 
-    new MessageActionRow().addComponents(
+    new ActionRowBuilder().addComponents(
         verifyingIDButton, verifiedIDButton
     )
 

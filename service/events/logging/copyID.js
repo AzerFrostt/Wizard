@@ -8,7 +8,6 @@ module.exports = {
             const id = result.replace(parseBracketsExp, '')
             interaction.reply({
                 content: id,
-                ephemeral: true,
             })
         }
 

@@ -1,6 +1,6 @@
-const { MessageEmbed } = require('discord.js')
+const { EmbedBuilder } = require('discord.js')
 
-const getInvalidTagEmbed = () => new MessageEmbed()
+const getInvalidTagEmbed = () => new EmbedBuilder()
     .setTitle('Invalid Tag! ❌')
     .setColor('#D10202')
     .addFields({

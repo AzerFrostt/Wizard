@@ -7,7 +7,7 @@ const {
 const {
   getInvalidTagEmbed,
 } = require('../../../utils/embeds/verify');
-const { parseTag, isTagValid } = require('../../../utils/tagHandling');
+const { parseTag, isTagValid } = require('../../../utils/arguments/tagHandling');
 
 module.exports = {
   data: new SlashCommandBuilder()
